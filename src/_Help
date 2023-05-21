@@ -1,0 +1,5 @@
+    abstract int getXp();
+    abstract  int getGold();
+
+    Для ввода команд используйте BufferedReader или Scanner.
+    Для обработки текстовых команд используйте рекурсию и switch оператор.
