@@ -1,4 +1,4 @@
 @FunctionalInterface
 public interface Seller {
-    void sell();
+    String sell(Trader.Goods goods);
 }

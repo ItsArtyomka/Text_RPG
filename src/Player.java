@@ -6,8 +6,10 @@ public class Player extends Character implements Fighter {
         super(name, hp, strength, agility, xp, gold);
     }
 
-    List<Potion> potionsList = new ArrayList<>(3);
+    // Lists for potions.
+    static List<Potion> potionsList = new ArrayList<>(3);
 
+    // Healing
     void heal(Potion potion) {
         if (!potionsList.isEmpty()) {
             setHp(getHp() + potion.healthHealing());
@@ -17,6 +19,7 @@ public class Player extends Character implements Fighter {
     }
 }
 
+// Potion Class
 class Potion {
     int healthHealing() {
         return 10;
