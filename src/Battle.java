@@ -33,7 +33,7 @@ public class Battle {
 
     boolean makeHit(Character attacker, Character defender, Game.FightCallback fightCallback) {
         int hit = attacker.attack();
-        int defenderHealth = defender.getHp();
+        int defenderHealth = defender.getHp() - hit;
 
         if (hit != 0) {
             System.out.printf("%s did %d damage!%n", attacker.getName(), hit);
