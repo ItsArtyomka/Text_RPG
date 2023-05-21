@@ -1,5 +1,5 @@
-@SuppressWarnings("ALL")
-public class Character implements Fighter {
+@SuppressWarnings("FieldMayBeFinal")
+public class Entity implements Fighter {
     // Name
     private final String name;
     // Stats
@@ -11,7 +11,7 @@ public class Character implements Fighter {
     private int gold;
 
     // Constructor
-    public Character(String name, int hp, int strength, int agility, int xp, int gold) {
+    public Entity(String name, int hp, int strength, int agility, int xp, int gold) {
         this.name = name;
         this.hp = hp;
         this.strength = strength;
@@ -40,22 +40,6 @@ public class Character implements Fighter {
 
     public void setHp(int hp) {
         this.hp = hp;
-    }
-
-    public int getStrength() {
-        return strength;
-    }
-
-    public void setStrength(int strength) {
-        this.strength = strength;
-    }
-
-    public int getAgility() {
-        return agility;
-    }
-
-    public void setAgility(int agility) {
-        this.agility = agility;
     }
 
     public int getXp() {

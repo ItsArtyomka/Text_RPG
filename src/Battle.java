@@ -6,7 +6,7 @@
 
 @SuppressWarnings("ReassignedVariable")
 public class Battle {
-    void fight(Character player, Character monster, Game.FightCallback fightCallback) {
+    void fight(Entity player, Entity monster, Game.FightCallback fightCallback) {
         Runnable runnable = () -> {
             int turn = 1;
             boolean isFightEnded = false;
@@ -31,7 +31,7 @@ public class Battle {
         thread.start();
     }
 
-    boolean makeHit(Character attacker, Character defender, Game.FightCallback fightCallback) {
+    boolean makeHit(Entity attacker, Entity defender, Game.FightCallback fightCallback) {
         int hit = attacker.attack();
         int defenderHealth = defender.getHp() - hit;
 

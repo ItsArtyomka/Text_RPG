@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Player extends Character implements Fighter {
+@SuppressWarnings("unused")
+public class Player extends Entity implements Fighter {
     public Player(String name, int hp, int strength, int agility, int xp, int gold) {
         super(name, hp, strength, agility, xp, gold);
     }

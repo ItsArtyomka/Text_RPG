@@ -17,7 +17,7 @@ import java.io.InputStreamReader;
 
 public class Game {
     private static BufferedReader br;
-    private static Character player = null;
+    private static Entity player = null;
     private static Battle battle = null;
 
     public static void main(String[] args) {
@@ -90,7 +90,7 @@ public class Game {
         });
     }
 
-    private static Character createMonster() {
+    private static Entity createMonster() {
         int random = (int) (Math.random() * 10);
 
         if (random % 2 == 0) {
