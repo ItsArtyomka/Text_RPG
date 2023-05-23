@@ -64,6 +64,6 @@ public class Entity implements Fighter {
 
     @Override
     public String toString() {
-        return String.format("%s health: %d", name, hp);
+        return String.format("%s's health: %d", name, hp);
     }
 }

@@ -18,29 +18,31 @@ public class Battle {
                     isFightEnded = makeHit(player, monster, fightCallback);
                 }
                 try {
-                    //Чтобы бой не проходил за секунду, сделаем имитацию работы, как если бы
-                    //у нас была анимация
                     Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                } catch (InterruptedException exception) {
+                    System.out.println(exception.getMessage());
+                    exception.printStackTrace();
                 }
             }
         };
         // Starting fight thread.
-        Thread thread = new Thread(runnable);
-        thread.start();
+        Thread battleThread = new Thread(runnable);
+        battleThread.start();
     }
 
     boolean makeHit(Entity attacker, Entity defender, Game.FightCallback fightCallback) {
         int hit = attacker.attack();
         int defenderHealth = defender.getHp() - hit;
 
+        // Damage System
         if (hit != 0) {
             System.out.printf("%s did %d damage!%n", attacker.getName(), hit);
             System.out.printf("%s has %d health left...%n", defender.getName(), defenderHealth);
         } else {
             System.out.printf("%s missed!%n", attacker.getName());
         }
+
+        // Victory / Defeat System
         if (defenderHealth <= 0 && defender instanceof Player) {
             System.out.println("Lost to the Zone...");
 

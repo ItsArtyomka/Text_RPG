@@ -29,6 +29,7 @@ public class Game {
         try {
             command(br.readLine());
         } catch (IOException exception) {
+            System.out.println(exception.getMessage());
             exception.printStackTrace();
         }
     }
@@ -36,11 +37,13 @@ public class Game {
     private static void command(String string) throws IOException {
         if (player == null) {
             player = new Player(string, 100, 20, 20, 0, 0);
-            System.out.printf("%s will save the world from dragons!%n", player.getName());
+            System.out.printf("%s will save the world from these dangerous deadly dragons!%n", player.getName());
 
+            // Print out the Menu
             printNavigation();
         }
-        //Варианты для команд
+
+        // Input system
         switch (string) {
             case "1" -> {
                 System.out.println("Trader isn't here yet.");
@@ -60,9 +63,9 @@ public class Game {
 
     private static void printNavigation() {
         System.out.println("---MENU---");
-        System.out.println("1. To Trader");
+        System.out.println("1. Item Shop");
         System.out.println("2. To Dark Forest");
-        System.out.println("3. Exit");
+        System.out.println("3. Exit the Game");
     }
 
     private static void commitFight() {
@@ -70,7 +73,7 @@ public class Game {
             @Override
             public void fightWin() {
                 System.out.printf("%s won! Now you have %d XP and %d Gold, " + "and %d HP left.%n", player.getName(), player.getXp(), player.getGold(), player.getHp());
-                System.out.println("Wanna continue or go back to town? (Yes/No)");
+                System.out.println("Wanna continue or go back to town? [Yes / No]");
                 try {
                     command(br.readLine());
                 } catch (IOException e) {
