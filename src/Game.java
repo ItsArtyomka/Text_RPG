@@ -21,9 +21,10 @@ public class Game {
     private static Battle battle = null;
 
     public static void main(String[] args) {
+        // User Input
         br = new BufferedReader(new InputStreamReader(System.in));
+        // Battle System
         battle = new Battle();
-
         System.out.println("Enter Player Name: ");
 
         try {
@@ -57,7 +58,6 @@ public class Game {
                 command(br.readLine());
             }
         }
-
         command(br.readLine());
     }
 
